@@ -4,6 +4,7 @@ import { getDatabase } from '../lib/notion/client.ts'
 import { getNavLink, getStaticFilePath, filePath } from '../lib/blog-helpers.ts'
 import '../styles/syntax-coloring.css'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
+import Darkmode from '../components/Darkmode.astro'
 import SearchModal from '../components/SearchModal.astro'
 import SearchButton from '../components/SearchButton.astro'
 
@@ -140,6 +141,7 @@ if (database.Icon && database.Icon.Type === 'file') {
 
         <aside>
           <SearchButton />
+           <Darkmode />
           <slot name="aside" />
         </aside>
       </div>
@@ -184,7 +186,10 @@ if (database.Icon && database.Icon.Type === 'file') {
     order: 1;
     width: 300px;
     padding: 20px 20px;
-    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
   }
   @media (max-width: 640px) {
     aside {
@@ -436,4 +441,33 @@ if (database.Icon && database.Icon.Type === 'file') {
     display: inline-block;
     min-height: 0.9rem;
   }
+
+  .pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border: solid 2px var(--fg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .pagetop__arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 3px solid var(--fg);
+    border-right: 3px solid var(--fg);
+    transform: translateY(20%) rotate(-45deg);
+}
+@media (hover: hover) and (pointer: fine) {
+    .pagetop:hover, .pagetop:hover .pagetop__arrow {
+      border-color: var(--accents-1);
+    }
+}
+aside { background-color: #f4f4f4;
+}
 </style>
