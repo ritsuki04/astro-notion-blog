@@ -121,6 +121,7 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
         (p: interfaces.Post) => p.Slug !== post.Slug
       )}
     />
+    <BlogPostsLink heading="はじめに" posts={rankedPosts} />
     <BlogPostsLink heading="最新記事" posts={recentPosts} />
     <BlogTagsLink heading="カテゴリー" tags={tags} />
   </div>
