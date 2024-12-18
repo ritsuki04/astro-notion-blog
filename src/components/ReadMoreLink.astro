@@ -13,11 +13,12 @@ const { post } = Astro.props
   <a href={getPostLink(post.Slug)}>→Read more</a>
 </div>
 
-<style>
+<style is:global>
   .read-more-link {
     color: var(--fg);
   }
   .read-more-link a {
+    color: rgb(55, 53, 47);
     font-size: 1rem;
     font-weight: 500;
     line-height: 2rem;
@@ -29,4 +30,8 @@ const { post } = Astro.props
     }
   }
   
+  .read-more-link a:hover {
+    color: #4382c4;
+  }
+
 </style>
