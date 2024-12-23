@@ -4,8 +4,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["_fetch-notion-blocks"],
-        "parallel": 8,
-        "accessToken": "NDRkYjAzNTMtZDk2ZC00NzFjLWI3YzQtNGNhODA2Yjg5MDZifHJlYWQtd3JpdGU="
+        "parallel": 8
       }
     }
   },
