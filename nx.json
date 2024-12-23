@@ -4,7 +4,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["_fetch-notion-blocks"],
-        "parallel": 8,
+        "parallel": 8
       }
     }
   },
